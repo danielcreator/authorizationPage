@@ -12,14 +12,17 @@ final class ViewController: UIViewController {
     @IBOutlet var userName: UITextField!
     @IBOutlet var passwordField: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let greetingsVC = segue.destination as? GreetingsViewController else { return }
-        
+        userName.text == "111" && passwordField.text == "111" ?
+        greetingsVC.usernameField = userName.text :
+        showAlert(withtitle: "Invalid login or password", andMessage: "Please, enter correct login and password")
     }
     
     
@@ -28,6 +31,11 @@ final class ViewController: UIViewController {
     }
     @IBAction func pressedButtonUN() {
         showAlert(withtitle: "Oops!", andMessage: "Your name is User")
+    }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userName.text = ""
+        passwordField.text = ""
     }
 }
 
