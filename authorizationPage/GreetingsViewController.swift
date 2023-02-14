@@ -9,6 +9,7 @@ import UIKit
 
 final class GreetingsViewController: UIViewController {
     
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet var userName: UILabel!
     var usernameField: String!
     

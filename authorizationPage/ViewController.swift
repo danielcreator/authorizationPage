@@ -12,19 +12,20 @@ final class ViewController: UIViewController {
     @IBOutlet var userName: UITextField!
     @IBOutlet var passwordField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let greetingsVC = segue.destination as? GreetingsViewController else { return }
-        userName.text == "111" && passwordField.text == "111" ?
+        userName.text == "User" && passwordField.text == "111" ?
         greetingsVC.usernameField = userName.text :
         showAlert(withtitle: "Invalid login or password", andMessage: "Please, enter correct login and password")
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     @IBAction func pressedButtonFP() {
         showAlert(withtitle: "Oops!", andMessage: "Your password is Password")
@@ -33,12 +34,12 @@ final class ViewController: UIViewController {
         showAlert(withtitle: "Oops!", andMessage: "Your name is User")
     }
     
+    
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         userName.text = ""
         passwordField.text = ""
     }
 }
-
 //MARK - UIAlertController
 extension ViewController {
     private func showAlert(withtitle title: String, andMessage message: String) {

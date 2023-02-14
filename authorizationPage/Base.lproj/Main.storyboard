@@ -148,6 +148,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="hWA-Wu-mI5" id="e32-iT-3St"/>
                         <outlet property="userName" destination="DRa-KD-lK4" id="O1k-As-Rsn"/>
                     </connections>
                 </viewController>
